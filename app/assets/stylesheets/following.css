@@ -1,0 +1,103 @@
+
+.followers-following-small {
+  position: absolute;
+  margin-top: 10px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.follower-line-small {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  width: 33.33%;
+}
+
+.follower-line-small div {
+  height: 33.33%;
+}
+
+.follower-line-small-f {
+  width: 33.33%;
+  padding-top: 5px;
+}
+.follower-line-small-f div div{
+  text-align: center;
+  height: 15px;
+}
+
+
+.followers-cover {
+  z-index: 40;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.followers-detail-main {
+  background: white;
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+
+
+.followers-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  height: 60px;
+  padding: 15px 0 0px 20px;
+  font-weight: 400;
+
+}
+
+.following-detail-item {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  padding: 0 10px;
+}
+
+.following-detail-item-logo {
+  width: 15%;
+  height: 100%;
+  padding: 5px;
+}
+
+.following-detail-item-logo div {
+
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+
+.following-detail-item-nickname {
+  padding-top: 8px;
+  width: 75%;
+  font-weight: 400;
+}
+.following-detail-item-nickname div a, .following-detail-item-nickname div a:hover  {
+  color: black;
+  text-decoration: none;
+}
+
+.following-detail-item-full-name {
+  font-weight: 500;
+  color: grey;
+  font-size: 12px;
+}
+
+.following-detail-item-following {
+  width: 100px;
+  float: right;
+  padding-top: 17px;
+}

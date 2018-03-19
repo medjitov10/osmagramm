@@ -1,0 +1,180 @@
+.personal-info-edit-main {
+  width: 96%;
+  max-width: 850px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 120px;
+  min-height: 500px;
+  padding-bottom: 20px;
+}
+
+.edit-logo-header {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.edit-logo-img {
+  width: 30%;
+  padding-right: 40px;
+}
+
+.edit-logo-img img{
+  float: right;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.edit-logo-nickname {
+  width: 70%;
+}
+
+.edit-logo-nickname span {
+  cursor: pointer;
+  color: #3897f0;
+  font-weight: 300;
+}
+
+.edit-logo-nickname-nickname {
+  font-size: 20px;
+}
+
+.no-padding {
+  padding: 0!important;
+  margin: 0!important;
+}
+.edit-logo-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.edit-logo-popup ul {
+  padding: 0;
+  margin: 300px auto;
+  width: 25%;
+  height: 14%;
+  background: white;
+}
+
+.edit-logo-popup li {
+  list-style: none;
+  width: 100%;
+  height: 50%;
+  border-bottom: .3px solid rgba(0, 0, 0, 0.5);
+  border-top: .3px solid rgba(0, 0, 0, 0.5);
+}
+
+.edit-logo-popup li:hover {
+  background: rgba(211, 211, 211, 0.4)
+}
+
+.edit-logo-popup li div {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.edit-form {
+  margin-top: 40px;
+
+}
+
+.edit-input {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.form-input {
+  width: 80%;
+}
+
+.edit-input-item {
+  width: 70%;
+}
+.edit-input-item input {
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.edit-input-item textarea {
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.edit-label {
+  padding-right: 40px;
+  width: 30%;
+}
+
+.edit-label label{
+  float: right;
+}
+
+.buttonsubmit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonsubmit button {
+  background: #3897f0;
+  border-radius: 5px;
+  color: white;
+  min-width: 80px;
+  font-weight: bold;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(237, 238, 239, 0.4);
+}
+
+@media screen and (max-width: 700px) {
+  .edit-label {
+    width: 100%;
+  }
+
+  .edit-label label {
+    margin-left: 20px;
+    float: none;
+  }
+
+  .edit-input-item {
+    margin-left: 20px;
+    width: 85%;
+  }
+
+  .edit-input-item input {
+    width: 100%;
+  }
+
+  .edit-input-item textarea {
+    width: 100%;
+  }
+
+  .edit-logo-img {
+    padding-right: 10px;
+  }
+}
+
+.loading h1 {
+  text-align: center;
+  margin-top: 30%;
+}
+
+.errors {
+  text-align: center;
+  color: red;
+}

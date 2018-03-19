@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #fafafa!important;
+  padding: 0;
+  margin: 0;
+}
+.app {
+  width: 100%;
+  height: 100%;
+  min-height: 1200px;
+}
+
+.log-in {
+  border: 1px solid black;
+  width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 15%;
+  padding-bottom: 20px;
+}
+
+.logo-img-sign-in {
+
+  height: 40px;
+  width: 120px;
+  background: url(osmagram.gif) center center no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.sign-in-inputs {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sign-in-inputs input {
+  width: 100%;
+  border: .5px solid rgba(0,0,0,0.3);
+}
+.sign-in-button {
+  width: 80%;
+  margin: 0 auto;
+}
+.sign-in-button input {
+  width: 100%;
+  background: #3897f0;
+  border: .3px solid #3897f0;
+  color: white;
+  font-weight: 400;
+}

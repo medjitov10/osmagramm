@@ -1,0 +1,59 @@
+<div class='log-in'>
+  <div class='logo-img-sign-in'></div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="sign-in-inputs">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+
+    <div class="sign-in-inputs">
+      <%= f.label :nickname %><br />
+      <%= f.text_field :nickname %>
+    </div>
+
+
+    <div class="sign-in-inputs">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="sign-in-inputs">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="sign-in-inputs">
+      <%= f.label :avatar%><br />
+      <%= f.file_field :logo_img %>
+    </div>
+
+    <div class="sign-in-inputs">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+
+    <div class="sign-in-inputs">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="sign-in-button" style='margin-top: 10px'>
+      <%= f.submit "Sign up" %>
+    </div>
+    <div class="sign-in-inputs">
+      <%= link_to "Log in", new_session_path(resource_name) %><br />
+      
+    </div>
+  <% end %>
+
+
+
+</div>
