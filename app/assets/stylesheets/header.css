@@ -30,7 +30,7 @@
   margin-top: 10%;
   width: 150px;
   height: 80%;
-  background: url('osmagram.gif') center center no-repeat;
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/users/logo_imgs/000/000/029/assets/osmagram.gif') center center no-repeat;
   background-size: 100%;
 }
 
@@ -39,7 +39,7 @@
   width: 30px;
   margin-top: 50%;
   height: 60%;
-  background: url('profile_icon.png') center center no-repeat;
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/users/logo_imgs/000/000/029/assets/profile_icon.png') center center no-repeat;
   background-size: 100%;
 }
 

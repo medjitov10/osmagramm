@@ -9,7 +9,7 @@
 }
 
 .not-found-avatar {
-  background: url('avatar_icon.png') center center no-repeat;
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/users/logo_imgs/000/000/029/assets/question.png') center center no-repeat;
   background-size: 100%;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .sign-out {
-  background: url('sign-out.png');
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/users/logo_imgs/000/000/029/assets/sign-out.png');
   background-size: 100%;
   margin-left: 5px;
   width: 26px;
