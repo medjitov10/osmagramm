@@ -10,13 +10,6 @@ import routes from './routes';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-class AppDemo extends Component {
-  render() {
-    return (
-      <div>TEst</div>
-    )
-  }
-}
 
 
 
@@ -25,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('content');
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <Router path="demo" routes={AppDemo}/>
+      <Router history={browserHistory} routes={routes}/>
     </Provider>, root);
 });
