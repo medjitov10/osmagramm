@@ -1,12 +1,6 @@
 {
   "name": "OsmanGramm",
   "private": true,
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    }
-  },
   "dependencies": {
     "axios": "^0.17.1",
     "babel-core": "^6.26.0",
