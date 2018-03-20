@@ -10,9 +10,6 @@ import routes from './routes';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('content');
