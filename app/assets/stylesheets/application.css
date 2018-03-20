@@ -53,6 +53,7 @@ body {
 }
 
 .sign-in-inputs input {
+  padding-left: 5px;
   width: 100%;
   border: .5px solid rgba(0,0,0,0.3);
 }
