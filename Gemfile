@@ -22,8 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
-gem "paperclip", "~> 4.3.6"
-gem 'aws-sdk', '< 2.0'
+gem "paperclip"
+gem 'aws-sdk'
 gem "figaro"
 gem 'devise'
 
