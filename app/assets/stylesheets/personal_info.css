@@ -70,7 +70,10 @@
 
 
 @media screen and (max-width: 735px) {
-
+  .last-and-first-name {
+    width: 95%;
+    margin:0 auto;
+  }
   .logo-main {
     display: flex;
     width: 150px;
@@ -89,7 +92,7 @@
 
   .info-right-main {
     margin-top: 15px;
-    width: 60%;
+    width: 50%;
   }
 
   .followers-following {
@@ -113,8 +116,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 18px;
-  width: 95%;
-  margin:0 auto;
+
   margin-bottom: 20px;
 }
 

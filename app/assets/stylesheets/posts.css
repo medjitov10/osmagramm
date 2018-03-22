@@ -246,7 +246,7 @@
 }
 
 .delete-comment {
-  background: url('https://s3.console.aws.amazon.com/s3/object/osman-gramm/users/logo_imgs/000/000/029/assets/close.png?region=us-east-2&tab=overview') center center no-repeat;
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/users/logo_imgs/000/000/029/assets/close.png') center center no-repeat;
   background-size: 100%;
   width: 20px;
   height: 20px;
