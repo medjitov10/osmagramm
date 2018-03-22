@@ -5,11 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :nickname, uniqueness: { case_sensitive: false },
-              format: {
-                with: /\A[a-z0-9]+\z/,
-                message: 'only lowwer case'
-              }
+  validates :nickname, uniqueness: { case_sensitive: false }
+  
   has_many :posts
   has_many :followers
   has_many :followings

@@ -11,6 +11,5 @@ export default (
     <IndexRoute component={News} />
     <Route path='/profile/edit/' component={ProFileInfoEdit} />
     <Route path='/:nickname' component={Profile} />
-
   </Route>
 );

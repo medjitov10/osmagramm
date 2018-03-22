@@ -94,12 +94,8 @@ class Profile extends Component {
                     <LargeWidthInfo
                       onFollowingClick={this.onFollowingClick.bind(this)}
                       proFile={this.props.proFile}
-                    />  :
-                    <SmallWidthInfo
-                      postsQty={this.props.posts.length}
-                      onFollowingClick={this.onFollowingClick.bind(this)}
-                      proFile={this.props.proFile}
-                    />
+                    />  : null
+
                 }
                 {
                   this.state.following.length ?
@@ -112,6 +108,14 @@ class Profile extends Component {
                 }
 
             </div>
+            { this.state.width < 735 ?
+              <SmallWidthInfo
+                postsQty={this.props.posts.length}
+                onFollowingClick={this.onFollowingClick.bind(this)}
+                proFile={this.props.proFile}
+              />  : null
+            }
+
           </div>
 
           <div className='posts-main'>
