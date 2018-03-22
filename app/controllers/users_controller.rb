@@ -40,10 +40,10 @@ class UsersController < ApplicationController
 
   def updatelogo
     @user = current_user
+    puts params
     @user.update(info_params)
-
+    puts @user
     if @user.save
-
       render json: {
         logo_img: current_user.logo_img.url(:square),
       }
