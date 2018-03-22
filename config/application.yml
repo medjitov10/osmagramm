@@ -5,11 +5,11 @@ development:
     AWS_REGION: 'us-east-2'
 test:
     AWS_ACCESS_KEY_ID: 'AKIAJE4CJJBWMAF64VBA'
-    AWS_SECRET_ACCESS_KEY: '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'
+    AWS_SECRET_ACCESS_KEY: 'TEnl3YJEnlTILvg5dyflzTULmgcySsHVdjwFdHI3'
     S3_BUCKET_NAME: 'osman-gramm'
     AWS_REGION: 'us-east-2'
 production:
     AWS_ACCESS_KEY_ID: 'AKIAJE4CJJBWMAF64VBA'
-    AWS_SECRET_ACCESS_KEY: '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'
+    AWS_SECRET_ACCESS_KEY: 'TEnl3YJEnlTILvg5dyflzTULmgcySsHVdjwFdHI3'
     S3_BUCKET_NAME: 'osman-gramm'
     AWS_REGION: 'us-east-2'
