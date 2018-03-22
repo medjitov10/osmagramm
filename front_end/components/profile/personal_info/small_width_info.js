@@ -6,7 +6,6 @@ export default class SmallWidthInfo extends Component {
   render() {
     return (
       <div className='small-width-info'>
-
         <div className="last-and-first-name">
           <span>{this.props.proFile.personalInfo.first_name} </span>
           <span>{this.props.proFile.personalInfo.last_name}</span>
