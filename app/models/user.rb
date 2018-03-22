@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :nickname, uniqueness: { case_sensitive: false }
-  
+
   has_many :posts
   has_many :followers
   has_many :followings
@@ -21,7 +21,5 @@ class User < ApplicationRecord
   }
 
   validates_attachment_content_type :logo_img, :content_type => /\Aimage\/.*\Z/
-  def logo_img_url
-    logo_img.url
-  end
+
 end
