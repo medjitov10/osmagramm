@@ -3,17 +3,36 @@ import { connect } from 'react-redux';
 import AddComment from '../comments/add_comment';
 import Comments from './../comments/comments'
 import Likes from './../like/like';
-import { clearPostItem } from './../../../actions/posts';
+import { clearPostItem, deletepost } from './../../../actions/posts';
+import Loading from './../personal_info/personal_info_edit/loading';
 
 class PostItem extends Component {
 
+  constructor() {
+    super();
+    this.state = { onDeleteClick: false }
+  }
+
+  onDeletePostClick(id) {
+    var result = confirm("Are you sure you want to delete this post?");
+    if (result) {
+      this.setState({onDeleteClick: true})
+      this.props.deletepost(id).then( e => {
+        this.setState({onDeleteClick: false})
+        this.props.click();
+      });
+    }
+  }
 
   render() {
     const { postItem, currentUser, personalInfo } = this.props;
     const comments = postItem.comments ? postItem.comments : [];
-
     return (
       <div className='current-post-item-main' onClick={ this.props.click }>
+        {
+          this.state.onDeleteClick ?
+          <Loading /> : null
+        }
         <div className='current-post-item-close'>
           <i className="fas fa-times fa-lg"></i>
         </div>
@@ -37,9 +56,17 @@ class PostItem extends Component {
                   }}></div> :
                   <div className='not-found-avatar' ></div>
                 }
-
               </a>
               <div className='comments-font'>{personalInfo.nickname}</div>
+              {
+                currentUser.current_user.id === personalInfo.id ?
+                <div
+                  style={{width: '100%'}}
+                  onClick={ e => this.onDeletePostClick(postItem.id) }>
+                    <i style={{float: 'right', marginRight: '20px'}}
+                      className="far fa-trash-alt fa-lg"></i>
+                </div> : null
+              }
             </div>
 
               <div className='comments'>
@@ -76,4 +103,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {clearPostItem})(PostItem);
+export default connect(mapStateToProps, {deletepost, clearPostItem})(PostItem);

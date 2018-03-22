@@ -73,6 +73,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+
+    render json: @post.destroy
+
+  end
+
   private
     def post_params
       params.require(:post).permit(:body, :post_image);

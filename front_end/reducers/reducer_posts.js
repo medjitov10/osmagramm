@@ -1,4 +1,4 @@
-import { FETCH_POSTS, ADD_POST } from './../actions/posts';
+import { FETCH_POSTS, ADD_POST, DELETE_POST } from './../actions/posts';
 
 const PostsReducer = ( state = [], action ) => {
   switch (action.type) {
@@ -8,6 +8,8 @@ const PostsReducer = ( state = [], action ) => {
       if (action.payload.data.errors)
       return state
       return [action.payload.data, ...state]
+    case DELETE_POST:
+      return state.filter( post => (post.id !== action.payload.data.id));
   }
   return state;
 };

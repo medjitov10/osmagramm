@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addPost } from './../../../actions/posts';
+import Loading from './../personal_info/personal_info_edit/loading';
 
 class AddPost extends Component {
   constructor() {
     super();
-    this.state = { body: '', file: {}, formStyle: {}, divStyle: {}, errors: ''};
+    this.state = {
+      body: '',
+      file: {},
+      formStyle: {},
+      divStyle: {},
+      errors: '',
+      onAddPostClick: false
+    };
   }
 
   onInputChange(e) {
@@ -18,12 +26,14 @@ class AddPost extends Component {
       body: this.state.body,
       file: this.state.file
     };
+    this.setState({ onAddPostClick: true})
 
     this.props.addPost(obj).then( (data) => {
       if ( data.payload.data.errors )
         {
-          this.setState({errors: data.payload.data.errors})
+          this.setState({errors: data.payload.data.errors, onAddPostClick: false})
         } else {
+          this.setState({ onAddPostClick: false})
           this.props.onCloseClick();
         }
     });
@@ -68,6 +78,10 @@ class AddPost extends Component {
 
     return (
       <div className='add-post' style={this.state.divStyle} onClick={this.props.onCloseClick}>
+        {
+          this.state.onAddPostClick ?
+          <Loading /> : null
+        }
         <div className='current-post-item-close'>
           <i className="fas fa-times fa-lg"></i>
         </div>

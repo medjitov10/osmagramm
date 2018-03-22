@@ -70,8 +70,7 @@ class Posts extends Component {
       <div className='posts'>
         {
           this.props.currentUser === this.props.proFile ?
-          <div style={{ width: '40px', paddingLeft: '15px', color: 'black', margin: '0 auto'}}
-            onClick={ () => this.onAddPostClick()}>
+          <div className='add-post-style' onClick={ () => this.onAddPostClick()}>
             <i className="fa-lg fas fa-plus-circle"></i>
           </div> : null
         }

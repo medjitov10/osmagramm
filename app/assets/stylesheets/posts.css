@@ -287,8 +287,20 @@
   align-items: center;
 }
 
+.add-post-style {
+  width: 40px;
+  padding-left: 15px;
+  color: black;
+  margin: 0 auto;
+}
 
 @media screen and (max-width: 735px) {
+  .add-post-style {
+    width: 40px;
+    padding-left: 15px;
+    color: black;
+    margin: 20px auto;
+  }
   .posts {
     margin-top: 60px;
     border-top: none;
