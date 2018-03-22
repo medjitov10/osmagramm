@@ -22,6 +22,8 @@ class PostsController < ApplicationController
     render json: @result
   end
 
+
+
   def show
     @user = User.find(params[:id])
     @posts = []
