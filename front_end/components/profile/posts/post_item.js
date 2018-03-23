@@ -5,7 +5,8 @@ import Comments from './../comments/comments'
 import Likes from './../like/like';
 import { clearPostItem, deletepost } from './../../../actions/posts';
 import Loading from './../personal_info/personal_info_edit/loading';
-
+import axios from 'axios';
+import Detail from './../detail_info/detail'
 class PostItem extends Component {
 
   constructor() {
@@ -33,6 +34,8 @@ class PostItem extends Component {
           this.state.onDeleteClick ?
           <Loading /> : null
         }
+
+
         <div className='current-post-item-close'>
           <i className="fas fa-times fa-lg"></i>
         </div>
@@ -78,18 +81,23 @@ class PostItem extends Component {
                 />
 
               </div>
+
               <div className='bottom-comment-menu'>
+
                 <div className='comment-info'>
-                  <Likes currentUser={currentUser.current_user} post_id={postItem.id} created_at={postItem.created_at}/>
+                  <Likes currentUser={currentUser.current_user} post_id={postItem.id}
+                    created_at={postItem.created_at}
+                
+                  />
                 </div>
+
                 <div className='add-comment-div'>
                   <AddComment post_id={postItem.id}/>
                 </div>
+
               </div>
           </div>
-
         </div>
-
       </div>
     );
   }
@@ -103,4 +111,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {deletepost, clearPostItem})(PostItem);
+export default connect(mapStateToProps, { deletepost, clearPostItem })(PostItem);

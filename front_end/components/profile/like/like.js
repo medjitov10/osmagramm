@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {LikePost, UnLikePost} from './../../../actions/posts';
+import { fetchLikeOwners } from './../../../actions/index';
 
 class Likes extends Component {
 
@@ -13,6 +14,10 @@ class Likes extends Component {
     this.props.UnLikePost(this.props.post_id);
   }
 
+  onLikeInfoClick(params) {
+    this.props.fetchLikeOwners(params)
+  }
+
   render() {
     const monthNames = [
       "January", "February", "March", "April", "May", "June",
@@ -21,7 +26,9 @@ class Likes extends Component {
     const { currentUser, created_at } = this.props;
 
     const date = new Date(created_at);
-    const data_in_word = `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`;
+    console.log(date.getDay());
+    console.log(date);
+    const data_in_word = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     const likes = this.props.likes.filter( like => {
       return like.post_id == this.props.post_id;
     });
@@ -36,8 +43,8 @@ class Likes extends Component {
           </div>
         }
         <div className='amount-of-likes' onClick={ () => {
-          this.props.callback ? this.props.callback(likes) : null 
-        } }>
+          this.onLikeInfoClick(users_id)
+        }}>
           {
             likes.length > 0 ?
             likes.length == 1 ? `1 like` : `${likes.length} like`  :
@@ -61,4 +68,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {LikePost, UnLikePost})(Likes)
+export default connect(mapStateToProps, { LikePost, UnLikePost, fetchLikeOwners })(Likes)

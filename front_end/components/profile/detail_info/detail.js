@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import FollowingDetailItem from './following_detail_item';
+import DetailItem from './detail_item';
 import {connect} from 'react-redux';
 
-class FollowingDetail extends Component {
+class Detail extends Component {
   render() {
     return (
       <div className="followers-cover" onClick={this.props.closeDetail}>
@@ -18,7 +18,7 @@ class FollowingDetail extends Component {
               this.props.following.map( follower => {
                 return (
                   <div key={follower.id}>
-                    <FollowingDetailItem follower={follower}
+                    <DetailItem follower={follower}
                       currentUser={this.props.currentUser}
                     />
                   </div>
@@ -35,8 +35,7 @@ class FollowingDetail extends Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.currentUser
-
   }
 }
 
-export default connect(mapStateToProps)(FollowingDetail);
+export default connect(mapStateToProps)(Detail);

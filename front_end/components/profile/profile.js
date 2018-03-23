@@ -7,9 +7,9 @@ import RightButton from './personal_info/right_button';
 import Posts from './posts/posts';
 import LargeWidthInfo from './personal_info/large_width_info';
 import SmallWidthInfo from './personal_info/small_width_info';
-import FollowingDetail from './follow/following_detail';
+import Detail from './detail_info/detail';
 
-import { fetchInfo,  current_user } from './../../actions/index';
+import { fetchInfo,  current_user, deleteDetail } from './../../actions/index';
 import { fetchPosts, postItem } from './../../actions/posts';
 import PostItem from './posts/post_item';
 
@@ -30,7 +30,7 @@ class Profile extends Component {
         following: [],
         loaded: false,
         showPostItem: true,
-        style: {}
+        style: {},
       };
     }
 
@@ -58,7 +58,7 @@ class Profile extends Component {
   }
 
   closeDetail() {
-    this.setState({ following: [] });
+    this.props.deleteDetail();
   }
 
 
@@ -94,6 +94,14 @@ class Profile extends Component {
             this.renderPostItem() :
             null
           }
+          {
+            this.props.detail.length ?
+            <Detail
+              following={this.props.detail[0]}
+              closeDetail={this.closeDetail.bind(this)}
+              who={this.props.detail[1]}
+            /> : null
+          }
           <div style={this.state.style}>
             <div className='personal-info-main'>
               <div className="logo-main">
@@ -127,22 +135,14 @@ class Profile extends Component {
                   </div>
                 </div>
 
-                  { this.state.width > 735 ?
+                  {
+                    this.state.width > 735 ?
                       <LargeWidthInfo
                         onFollowingClick={this.onFollowingClick.bind(this)}
                         proFile={this.props.proFile}
                       />  : null
+                  }
 
-                  }
-                  {
-                    this.state.following.length ?
-                    <FollowingDetail
-                      following={this.state.following}
-                      closeDetail={this.closeDetail.bind(this)}
-                      who='Followings'
-                    /> :
-                    null
-                  }
 
               </div>
               {
@@ -176,6 +176,7 @@ const mapStateToProps = (state) => ({
   currentUser: state.currentUser,
   posts: state.posts,
   postItem1: state.postItem,
+  detail: state.detail
 });
 
-export default connect(mapStateToProps, { fetchInfo,  current_user, fetchPosts, postItem})(Profile);
+export default connect(mapStateToProps, { fetchInfo,  current_user, fetchPosts, postItem, deleteDetail})(Profile);

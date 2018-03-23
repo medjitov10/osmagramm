@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Loading from './../profile/personal_info/personal_info_edit/loading';
 
 import {connect} from 'react-redux';
 import {fetchNews, fetchLikeOwners} from './../../actions/news';
-import FollowingDetail from './../profile/follow/following_detail';
+import { deleteDetail } from './../../actions/index';
+import Detail from './../profile/detail_info/detail';
 
 import NewsItem from './news_item';
 
@@ -17,44 +19,36 @@ class News extends Component {
     this.props.fetchNews();
   }
 
-  onLikeInfoClick(params) {
-    const ids = params.map( par => par.user_id )
-    const request = axios.put(`/likes/id`, {user_id: ids}).then( data => this.setState({ users: data.data }) );
-  }
-
   closeDetail() {
-    this.setState({ users: []})
+    this.props.deleteDetail();
   }
 
   render() {
 
-    if ( this.props.currentUser ) {
+    if ( this.props.currentUser && this.props.news ) {
       return (
         <div className='news'>
-          
           {
             this.props.news.map( post => {
               return (
-                <NewsItem key={post.id} post={post} currentUser={this.props.currentUser} callback={this.onLikeInfoClick.bind(this)}/>
+                <NewsItem key={post.id} post={post} currentUser={this.props.currentUser}/>
               )
             })
           }
           {
-            this.state.users.length ?
-            <FollowingDetail
-              following={this.state.users}
+            this.props.detail.length ?
+            <Detail
+              following={this.props.detail[0]}
               closeDetail={this.closeDetail.bind(this)}
-              who='Likes'
+              who={this.props.detail[1]}
             /> : null
           }
-
         </div>
-
       )
     } else {
       return (
-        <div></div>
-      )
+        <Loading />
+      );
     }
 
   }
@@ -64,7 +58,8 @@ const mapStateToProps = (state) => {
   return {
     news: state.news,
     currentUser: state.currentUser,
+    detail: state.detail
   }
 }
 
-export default connect(mapStateToProps, {fetchNews, fetchLikeOwners})(News)
+export default connect(mapStateToProps, {fetchNews, fetchLikeOwners, deleteDetail})(News)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RightButton from './../personal_info/right_button';
 
-export default class FollowingDetailItem extends Component {
+export default class DetailItem extends Component {
   render() {
 
     return (

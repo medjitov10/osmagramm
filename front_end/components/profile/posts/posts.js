@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router';
 
 import { fetchPosts, postItem } from '../../../actions/posts';
-import Comments from '../comments/comments';
-import PostItem from './post_item';
 import AddPost from './add_post'
 class Posts extends Component {
 
@@ -14,7 +12,6 @@ class Posts extends Component {
       add_post: false
     };
   }
-
 
   renderPosts() {
     const posts = this.props.posts.reduce((chunk, item, i) => {
@@ -75,7 +72,6 @@ const mapStateToProps = state => {
   return {
     proFile: state.proFile.personalInfo.id,
     currentUser: state.currentUser.current_user.id,
-
   }
 }
 
