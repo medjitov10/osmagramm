@@ -11,25 +11,12 @@ class Posts extends Component {
   constructor() {
     super();
     this.state = {
-      showPostItem: false,
       add_post: false
     };
   }
 
 
-
-  clearPostItem() {
-    this.setState({showPostItem: false})
-  }
-
-  onPostClick(id) {
-    this.props.postItem(id).then( () => {
-      this.setState({showPostItem: true});
-    });
-  }
-
   renderPosts() {
-
     const posts = this.props.posts.reduce((chunk, item, i) => {
       if (i % 3 === 0) {
         chunk.push([item]);
@@ -45,7 +32,7 @@ class Posts extends Component {
           {
             postsRow.map ( post => {
               return (
-                  <div className='post-item' key={post.id} onClick={ () => this.onPostClick(post.id) }>
+                  <div className='post-item' key={post.id} onClick={ () => this.props.onPostClick(post.id) }>
                     <img src={post.post_image} alt=""/>
                   </div>
                 );
@@ -61,7 +48,7 @@ class Posts extends Component {
   }
 
   onCloseClick() {
-    this.setState({add_post: false});
+    this.setState({ add_post: false });
   }
 
   render() {
@@ -80,7 +67,6 @@ class Posts extends Component {
           <AddPost onCloseClick={this.onCloseClick.bind(this)}/> : null
         }
         {this.renderPosts()}
-        {this.state.showPostItem ? <PostItem click={this.clearPostItem.bind(this)}/> : null }
       </div>
     );
   }
@@ -88,7 +74,8 @@ class Posts extends Component {
 const mapStateToProps = state => {
   return {
     proFile: state.proFile.personalInfo.id,
-    currentUser: state.currentUser.current_user.id
+    currentUser: state.currentUser.current_user.id,
+
   }
 }
 

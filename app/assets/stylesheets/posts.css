@@ -91,10 +91,12 @@
 .current-post-item-main {
   z-index: 20;
   width: 100%;
-  height: 100%;
-  position: fixed;
+  min-height: 1000px;
+  position: absolute;
+  padding-bottom: 80px;
   left: 0;
   top: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -107,6 +109,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .current-post-item-img {
   background: white;
   min-height: 600px;
@@ -317,13 +320,16 @@
     margin-right: .5%;
   }
 
+  .current-post-item {
+    margin-top: 20%;
+    width: 100%
+  }
+
   .current-post-item-img {
     min-height: 300px;
     height: 300px;
     width: 100%;
     margin: 0 auto;
-    margin-top: 10%;
-
   }
 
   .current-post-item-comments {
@@ -346,7 +352,7 @@
   }
 
   .current-post-item-main {
-    position: absolute;
+    max-height: 700px;
   }
   .comment-info {
     height: 65px;

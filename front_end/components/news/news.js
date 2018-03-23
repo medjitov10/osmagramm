@@ -31,7 +31,7 @@ class News extends Component {
     if ( this.props.currentUser ) {
       return (
         <div className='news'>
-          <a href="/users/sign_in">Log in</a>
+          
           {
             this.props.news.map( post => {
               return (
