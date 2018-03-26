@@ -42,7 +42,7 @@ label {
 }
 
 .log-in-example {
-  background: url('log-in.jpg') no-repeat;
+  background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/images/log-in.jpg') no-repeat;
   background-size: 100%;
   width: 60%;
 }
