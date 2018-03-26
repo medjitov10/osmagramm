@@ -21,16 +21,18 @@ class Profile extends Component {
         width: window.innerWidth,
         following: [],
         loaded: false,
-        showPostItem: true,
-        style: {}
+        showPostItem: false,
+        style: {},
+        loading: false
       };
     } else {
       this.state = {
         width: screen.width,
         following: [],
         loaded: false,
-        showPostItem: true,
+        showPostItem: false,
         style: {},
+        loading: false
       };
     }
 
@@ -77,16 +79,18 @@ class Profile extends Component {
       style: {
         position: 'fixed',
         width: '100%'
-      }
+      },
+      loading: true
     })
     this.props.postItem(id).then( () => {
-      this.setState({showPostItem: true});
+      this.setState({showPostItem: true, loading: false});
     });
   }
 
   render() {
-
-    if (this.props.proFile && this.state.loaded) {
+    const style = this.props.detail.length ?
+    { position: 'fixed', width: '100%'} : this.state.style
+    if (this.props.proFile && this.state.loaded && this.state.loading === false ) {
       return (
         <div>
           {
@@ -102,7 +106,7 @@ class Profile extends Component {
               who={this.props.detail[1]}
             /> : null
           }
-          <div style={this.state.style}>
+          <div style={style}>
             <div className='personal-info-main'>
               <div className="logo-main">
                 {

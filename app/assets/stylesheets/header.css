@@ -47,4 +47,8 @@
   .header-content {
     width: 80%;
   }
+
+  .news {
+    margin-top: 100px;
+  }
 }

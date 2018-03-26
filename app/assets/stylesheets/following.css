@@ -33,11 +33,13 @@
 
 .followers-cover {
   z-index: 40;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 1000px;
+  bottom: 0;
   top: 0;
   left: 0;
+  padding-bottom: 80px;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -47,6 +49,7 @@
   height: 600px;
   margin: 0 auto;
   margin-top: 10%;
+  border-bottom: .3px solid rgba(0,0,0,.4);
 }
 
 

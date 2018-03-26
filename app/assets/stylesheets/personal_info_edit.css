@@ -142,7 +142,7 @@
   background: rgba(237, 238, 239, 0.4);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 735px) {
   .edit-label {
     width: 100%;
   }
@@ -152,6 +152,9 @@
     float: none;
   }
 
+  .following-detail-item-nickname {
+    margin-left: 20px;
+  }
   .edit-input-item {
     margin-left: 20px;
     width: 85%;

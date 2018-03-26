@@ -353,11 +353,15 @@
 
   .current-post-item-main {
     max-height: 700px;
+    min-height: 0;
   }
   .comment-info {
     height: 65px;
   }
-
+  .followers-cover {
+    max-height: 700px;
+    min-height: 0;
+  }
   .app {
     min-height: 600px!important;
   }
