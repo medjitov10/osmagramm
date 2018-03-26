@@ -72,12 +72,13 @@
 
   position: absolute;
   top: 70px;
-  left: -10px;
+  left: 2px;
   width: 200px;
   height: 200px;
   border: .6px solid rgba(0,0,0,.3);
   z-index: 10;
   background: white;
+  overflow: auto;
 }
 
 .search-list-arrow {
@@ -86,7 +87,7 @@
   width: 15px;
   height: 15px;
   position: absolute;
-  top: -7.5px;
+  top: 62.5px;
   left: 45%;
   transform: rotateZ(45deg);
   border-left: .6px solid rgba(0,0,0,.3);
