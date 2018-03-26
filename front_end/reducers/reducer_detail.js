@@ -7,7 +7,6 @@ import {
 const DetailReducer = ( state = [], action) => {
   switch (action.type) {
     case DETAIL_FOLLOWERS:
-      console.log(action.payload.data);
       return [action.payload.data, 'Followers']
     case DETAIL_FOLLOWINGS:
       return [action.payload.data, 'Followings']

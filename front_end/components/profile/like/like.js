@@ -26,8 +26,7 @@ class Likes extends Component {
     const { currentUser, created_at } = this.props;
 
     const date = new Date(created_at);
-    console.log(date.getDay());
-    console.log(date);
+
     const data_in_word = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     const likes = this.props.likes.filter( like => {
       return like.post_id == this.props.post_id;

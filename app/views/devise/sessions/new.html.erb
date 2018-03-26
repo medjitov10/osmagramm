@@ -6,7 +6,7 @@
   <div class='log-in-form'>
     <div class='logo-img-sign-in'></div>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name,html: { id: 'form_id'}, url: session_path(resource_name)) do |f| %>
       <div class="sign-in-inputs">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
