@@ -44,7 +44,7 @@ export default class NewsItem extends Component {
           />
         </div>
         <div className='news-body'>
-          <a href={post.user}><span>{post.user}</span></a>
+          <a href={post.user}><span>{post.user} </span></a>
           {post.body}
         </div>
         <NewsComments post={post} currentUser={currentUser}/>
