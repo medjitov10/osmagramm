@@ -13,11 +13,12 @@ class Comments extends Component {
           {
             fromNews ?
             null :
+            body.length ?
             <div className='comment'>
               <a href={nickname}>{nickname}</a>
               &nbsp;
               <span>{body}</span>
-            </div>
+            </div> : null
           }
         </div>
         {

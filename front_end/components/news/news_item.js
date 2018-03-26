@@ -11,7 +11,7 @@ export default class NewsItem extends Component {
 
   render () {
     const {post, currentUser } = this.props;
-
+    
     return (
       <div className='news-post' key={post.id}>
         <div className='news-header'>
@@ -43,10 +43,15 @@ export default class NewsItem extends Component {
             callback={this.props.callback}
           />
         </div>
-        <div className='news-body'>
-          <a href={post.user}><span>{post.user} </span></a>
-          {post.body}
-        </div>
+        {
+          post.body.length ?
+          <div className='news-body'>
+            <a href={post.user}><span>{post.user} </span></a>
+            {post.body}
+          </div> :
+          null
+        }
+
         <NewsComments post={post} currentUser={currentUser}/>
       </div>
     )
