@@ -28,7 +28,7 @@ gem "figaro"
 gem 'devise'
 
 group :development do
-
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen', '>= 3.0.5', '< 3.2'
 
 end

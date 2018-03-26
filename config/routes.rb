@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :followings
   resources :comments
   resources :likes
+  resources :infos
   get '*path', to: 'static_pages#root'
 
 end

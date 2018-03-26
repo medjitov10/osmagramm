@@ -576,6 +576,7 @@ GEM
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     builder (3.2.3)
+    byebug (10.0.1)
     climate_control (0.2.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -708,6 +709,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  byebug
   coffee-rails (~> 4.2)
   devise
   figaro

@@ -1,45 +1,30 @@
 class InfosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def index
-    render json: {
-      :current_user => current_user,
-      :following => current_user.followings,
-      :followers => current_user.followers
-    }
-  end
-
-  def show
-
-    @user = User.where(nickname: params[:id]).first
-    @info = {
-      id: @user.id,
-      last_name: @user.last_name,
-      first_name: @user.first_name,
-      nickname: @user.nickname
-    }
-    render json: {
-      :personalInfo => @info,
-      :followers => @user.followers,
-      :following => @user.followings
-    }
-
-  end
-
   def update
-    debugger
-    @info = Info.find(params[:id]);
-
-    @info.update(info_params)
-
-    @user = User.find(@info[:user_id])
-
-    render json: {
-      :personalInfo => @info,
-      :followers => @user.followers,
-      :following => @user.followings
-    }
+    @words = params[:searchString].split(' ')
+    @result = []
+    @users = []
+    if @words.length == 2
+      @users = User.where('first_name=? OR last_name=?', @words[0], @words[0]).where('first_name=? OR last_name=?', @words[1], @words[1])
+    elsif @words.length == 1
+      @users = User.where(first_name: @words[0]).or(User.where(last_name: @words[0])).or(User.where(nickname: @words[0]))
+    end
+    @users.each do |user|
+      @result << {
+        last_name: user.last_name,
+        first_name: user.first_name,
+        logo_img: user.logo_img.url(:thumb),
+        nickname: user.nickname,
+        id: user.id
+      }
+    end
+    render json: @result
   end
+
+
+
+
 
   private
   def info_params

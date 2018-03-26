@@ -43,9 +43,106 @@
   background-size: 100%;
 }
 
+.header-input {
+  position: relative;
+}
+
+.header-input input {
+  margin-top: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: .6px solid rgba(0,0,0,.3);
+}
+
+.header-input-i {
+  position: absolute;
+  top: 32px;
+  left: 3px;
+  color: grey;
+}
+
+.header-input-close {
+  position: absolute;
+  top: 26px;
+  right: 3px;
+  color: grey;
+}
+
+.search-list {
+
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  width: 200px;
+  height: 200px;
+  border: .6px solid rgba(0,0,0,.3);
+  z-index: 10;
+  background: white;
+}
+
+.search-list-arrow {
+  background: white;
+  z-index: 20;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -7.5px;
+  left: 45%;
+  transform: rotateZ(45deg);
+  border-left: .6px solid rgba(0,0,0,.3);
+  border-top: .6px solid rgba(0,0,0,.3);
+}
+
+.list-item-main {
+
+  display: flex;
+  width: 100%;
+  height: 60px;
+  text-decoration: none;
+  color: black;
+}
+
+.list-item-main:hover {
+  text-decoration: none;
+  color: black;
+  background: rgba(0,0,0,.2);
+}
+
+.list-item-user-img {
+  margin: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.list-item-info {
+  height: 50px;
+  margin-top: 5px;
+}
+
+.list-item-nickname {
+  width: 100%;
+  height: 40%;
+  font-weight: 600;
+}
+
+.list-item-name {
+  width: 100%;
+  height: 50%;
+  font-weight: 500;
+  color: grey;
+  font-size: 12px;
+}
+
 @media screen and (max-width: 735px) {
   .header-content {
     width: 80%;
+  }
+
+  .logo-img {
+    width: 50px;
+    background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/images/osmagram-small.png') center center no-repeat;
+    background-size: contain;
   }
 
   .news {

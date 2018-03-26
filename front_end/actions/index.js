@@ -15,6 +15,7 @@ export const DELETE_DETAIL = 'DELETE_DETAIL';
 export const DETAIL_FOLLOWINGS = 'DETAIL_FOLLOWINGS';
 export const DETAIL_FOLLOWERS = 'DETAIL_FOLLOWERS';
 export const DETAIL_LIKE_OWNERS = 'DETAIL_LIKE_OWNERS';
+export const FETCH_SEARCH_USERS = 'FETCH_SEARCH_USERS';
 
 export const current_user = () => {
   const request = axios.get('/users/', {
@@ -136,3 +137,13 @@ export const updatelogo = (files) => {
 export const deleteDetail = () => ({
   type: DELETE_DETAIL
 })
+
+export const fetchSearchUsers = (searchString) => {
+  
+  const request = axios.put('infos/:id', {searchString});
+
+  return {
+    type: FETCH_SEARCH_USERS,
+    payload: request
+  }
+}

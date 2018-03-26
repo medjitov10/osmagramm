@@ -91,6 +91,7 @@
 .following-detail-item-nickname div a, .following-detail-item-nickname div a:hover  {
   color: black;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .following-detail-item-full-name {

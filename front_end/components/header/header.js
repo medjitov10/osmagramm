@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
-import {current_user} from './../actions/index';
+import {current_user} from './../../actions/index';
+import UserSearch from './user-search';
 
 class Header extends Component {
   componentWillMount() {
@@ -17,6 +18,7 @@ class Header extends Component {
       <div className='header'>
         <div className='header-content'>
           <Link to="/"><div className='logo-img'></div></Link>
+          <UserSearch />
           <a href={`/${nickname}`}><div className='profile-icon'></div></a>
         </div>
       </div>

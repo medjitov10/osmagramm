@@ -9,6 +9,7 @@ import PostsItemReducer from './reducer_post_item';
 import LikesReducer from './reducer_likes';
 import NewsReducer from './reducer_news';
 import DetailReducer from './reducer_detail';
+import SearchUsersReducer from './reducer_search_users';
 
 const rootReducer = combineReducers({
   proFile: ProfileReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   form: formReducer,
   likes: LikesReducer,
   news: NewsReducer,
-  detail: DetailReducer
+  detail: DetailReducer,
+  searchedUsers: SearchUsersReducer
 });
 
 
