@@ -9,12 +9,12 @@
     <%= form_for(resource, as: resource_name,html: { id: 'form_id'}, url: session_path(resource_name)) do |f| %>
       <div class="sign-in-inputs">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, :id => 'login', autofocus: true %>
       </div>
 
       <div class="sign-in-inputs">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, :id => 'password', autocomplete: "off" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
@@ -27,7 +27,7 @@
       <div class="sign-in-button">
         <%= f.submit "Log in" %>
       </div>
-      <button class="guest">Guest</button>
+      <button class="guest" onClick='guest()'>Guest</button>
       <div class="sign-in-inputs">
         <%= link_to "Sign up", new_registration_path(resource_name) %><br />
       </div>
@@ -39,8 +39,8 @@
 
 <script type="text/javascript">
   function guest() {
-    document.getElementById('password').value = 'daenerys@mother.com'
-    document.getElementById('login').value = 'qweqwe';
+    document.getElementById('login').value = 'daenerys@mother.com';
+    document.getElementById('password').value = 'qweqwe';
     document.getElementById("form_id").submit();
   }
 </script>

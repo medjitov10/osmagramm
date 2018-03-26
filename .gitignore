@@ -9,6 +9,7 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+/config/application.yml
 /log/*
 /tmp/*
 !/log/.keep
@@ -23,3 +24,4 @@ bundle.js*
 bundle.js.map
 .DS_Store
 npm-debug.log
+application.yml
