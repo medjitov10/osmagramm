@@ -34,21 +34,22 @@ class Likes extends Component {
 
     const users_id = likes.map( l => l.user_id);
     return (
-      <div className='like-row'>
-        {
-          users_id.includes(currentUser.id) ?
-          <div onClick={this.unlikePost.bind(this)} className='like liked'></div> :
-          <div onClick={this.likePost.bind(this)} className='like no-like'>
-          </div>
-        }
-        <div className='amount-of-likes' onClick={ () => {
-          this.onLikeInfoClick(users_id)
-        }}>
+      <div>
+        <div style={{display: 'flex'}}>
           {
-            likes.length > 0 ?
-            likes.length == 1 ? `1 like` : `${likes.length} like`  :
-            null
+            users_id.includes(currentUser.id) ?
+            <div onClick={this.unlikePost.bind(this)} className='like liked'></div> :
+            <div onClick={this.likePost.bind(this)} className='like no-like'></div>
           }
+          <div className='amount-of-likes' onClick={ () => {
+            this.onLikeInfoClick(users_id)
+          }}>
+            {
+              likes.length > 0 ?
+              likes.length == 1 ? `1 like` : `${likes.length} like`  :
+              null
+            }
+          </div>
         </div>
         <div className='post-data'
           style={

@@ -137,7 +137,16 @@
 
 @media screen and (max-width: 735px) {
   .header-content {
-    width: 80%;
+    width: 95%;
+  }
+
+  .header-content a {
+    height: 80%;
+    margin-top: 10px;
+  }
+
+  .profile-icon {
+    margin-top: 10px;
   }
 
   .logo-img {

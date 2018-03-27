@@ -128,7 +128,7 @@ label {
 .footer div {
   display: flex;
   justify-content: space-between;
-  width: 50px;
+  width: 80px;
   margin: 0 auto;
   margin-top: 20px;
 }

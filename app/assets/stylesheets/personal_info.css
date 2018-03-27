@@ -84,6 +84,9 @@
     height: 75px;
   }
 
+  .nickname {
+    font-size: 28px;
+  }
 
   .nickname-and-button {
     display: block;

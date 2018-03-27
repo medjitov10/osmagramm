@@ -13,8 +13,10 @@ export default class SmallWidthInfo extends Component {
         </div>
         <div className='followers-following-small'>
           <div className="follower-line-small">
-            <div>{this.props.postsQty}</div>
-            <div>posts</div>
+            <div>
+              <div style={{marginTop: '10px'}}>{this.props.postsQty}</div>
+              <div>posts</div>
+            </div>
           </div>
           <div className="follower-line-small-f">
             <Followers qty={this.props.proFile.followers.length} onFollowingClick={this.props.onFollowingClick} small={true}/>
