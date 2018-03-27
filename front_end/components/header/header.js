@@ -17,9 +17,15 @@ class Header extends Component {
     return (
       <div className='header'>
         <div className='header-content'>
-          <Link className='header-content-a' to="/"><div className='logo-img'></div></Link>
-          <UserSearch />
-          <a href={`/${nickname}`}><div className='profile-icon'></div></a>
+          <div className='header-item-qwe'>
+            <Link className='header-content-a' to="/"><div className='logo-img'></div></Link>
+          </div>
+          <div className='header-item-qwe'>
+            <UserSearch />
+          </div>
+          <div className='header-item-qwe'>
+            <a href={`/${nickname}`}><div className='profile-icon'></div></a>
+          </div>
         </div>
       </div>
     );

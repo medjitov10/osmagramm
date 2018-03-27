@@ -140,13 +140,28 @@
     width: 95%;
   }
 
+  .header-item-qwe:nth-child(odd){
+    width: 20%;
+  }
+  .header-item-qwe:nth-child(even){
+    width: 60%;
+  }
+
+  .header-item-qwe:last-child {
+    margin-top: 15px;
+  }
+
+  .header-item-qwe:last-child a div {
+    margin: 0 auto;
+  }
+
   .header-content-a {
     height: 60%;
     margin-top: 15px!important;
   }
 
   .header-input {
-    width: 60%;
+    width: 95%;
   }
 
   .header-input form input {
@@ -163,6 +178,8 @@
 
   .logo-img {
     width: 50px;
+    height: 40px;
+    margin-top: 20px;
     background: url('https://s3.us-east-2.amazonaws.com/osman-gramm/images/osmagram-small.png') center center no-repeat;
     background-size: contain;
   }
