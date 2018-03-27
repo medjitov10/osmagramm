@@ -140,9 +140,21 @@
     width: 95%;
   }
 
-  .header-content a {
-    height: 80%;
-    margin-top: 10px;
+  .header-content-a {
+    height: 60%;
+    margin-top: 15px!important;
+  }
+
+  .header-input {
+    width: 60%;
+  }
+
+  .header-input form input {
+    width: 100%;
+  }
+
+  .logo-img div {
+    height: 40px
   }
 
   .profile-icon {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 
-import {addComment} from './../../../actions/comments';
+import {addComment, addCommentNews} from './../../../actions/comments';
 
 class AddComment extends Component {
 
@@ -13,6 +13,8 @@ class AddComment extends Component {
   onButtonClick(e) {
     const str = e.target.value;
     if (str.charCodeAt(str.length-1) === 10) {
+      this.props.fromNews ?
+      this.props.addCommentNews(this.state.body, this.props.post_id):
       this.props.addComment(this.state.body, this.props.post_id);
       this.setState({body: ''});
     } else {
@@ -36,4 +38,4 @@ class AddComment extends Component {
   }
 }
 
-export default connect(null, {addComment})(AddComment);
+export default connect(null, {addComment, addCommentNews})(AddComment);

@@ -6,13 +6,13 @@ export default class Footer extends Component {
       <div className='footer'>
         <div>
           <a href="https://github.com/medjitov10">
-            <i class="fab fa-github-alt fa-lg"></i>
+            <i className="fab fa-github-alt fa-lg"></i>
           </a>
           <a href="https://www.linkedin.com/in/osmanmed/">
-            <i class="fab fa-linkedin fa-lg"></i>
+            <i className="fab fa-linkedin fa-lg"></i>
           </a>
           <a href="https://osman-medzhytov.herokuapp.com/">
-            <i class="fas fa-info-circle fa-lg"></i>
+            <i className="fas fa-info-circle fa-lg"></i>
           </a>
 
         </div>

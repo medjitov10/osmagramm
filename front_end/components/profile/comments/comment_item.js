@@ -1,9 +1,11 @@
 import React, {Component } from 'react';
-import { deleteComment } from './../../../actions/comments';
+import { deleteComment, deleteCommentNews } from './../../../actions/comments';
 import {connect} from 'react-redux';
 
 class CommentItem extends Component {
     onDeleteClick(id) {
+      this.props.fromNews ?
+      this.props.deleteCommentNews(id) :
       this.props.deleteComment(id);
     }
     render() {
@@ -35,4 +37,4 @@ class CommentItem extends Component {
 }
 
 
-export default connect(null, { deleteComment })(CommentItem);
+export default connect(null, { deleteComment, deleteCommentNews })(CommentItem);

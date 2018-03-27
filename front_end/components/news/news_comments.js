@@ -56,7 +56,7 @@ export default class NewsComments extends Component {
           />
         }
         <div className='add-comment-news'>
-          <AddComment post_id={post.id}/>
+          <AddComment post_id={post.id} fromNews={true}/>
         </div>
       </div>
 
