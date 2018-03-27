@@ -26,7 +26,9 @@ class UserSearch extends Component {
       <div className='header-input' onSubmit={ (e)=> { this.onFormSubmit(e) }}>
         <form action="">
           <i className="fas fa-search fa-sm header-input-i"></i>
-          <div className='header-input-close' onClick={ () => this.setState({value: ''})}>
+          <div className='header-input-close' onClick={ () => {
+            this.setState({value: ''}); this.props.fetchSearchUsers("");}
+          }>
             <i className="far fa-times-circle"
               ></i>
           </div>
