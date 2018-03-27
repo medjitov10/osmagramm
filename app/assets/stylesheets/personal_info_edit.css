@@ -159,7 +159,11 @@
     margin-left: 20px;
     width: 85%;
   }
-
+  .edit-logo-popup ul {
+    width: 80%;
+    height: 30%;
+    margin: 200px auto;
+  }
   .edit-input-item input {
     width: 100%;
   }
