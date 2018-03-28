@@ -88,3 +88,16 @@ There is simple routing where after sign-in, user go to News component. Also, us
   </Route>
 ```
 
+#### Reducer structure
+  ##### CurrentUserReducer
+  Сurrent user is the object of the logged-in user
+  ##### ProfileReducer
+  Profile is object of person's nickname of which corresponds to the nickname in the search string.
+  ##### PostsReducer
+  Posts is the array of post objects of users current user followed
+  ##### PostsItemReducer
+  Post item is object user clicked to see more information (if user in the page of any user)
+  ##### NewsReducer
+  ##### LikesReducer
+  ##### DetailReducer
+  ##### SearchUsersReducer
