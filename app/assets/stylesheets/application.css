@@ -137,6 +137,10 @@ label {
   color: black;
 }
 
+.amount-of-likes {
+  margin-top: 6px;
+}
+
 @media screen and (max-width: 735px) {
   .log-in-form {
     width: 100%;
